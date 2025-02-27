@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "rm -r node_modules/.cache;tsdx build",
     "build:umd": "tsdx build --format umd",
     "test": "tsdx test",
     "lint": "eslint 'src/**' && prettier --check .",
