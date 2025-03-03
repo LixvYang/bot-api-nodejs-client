@@ -18,7 +18,7 @@ export const getPublicFromMainnetAddress = (address: string) => {
     const payload = data.subarray(0, data.length - 4);
     const msg = Buffer.concat([Buffer.from(MainAddressPrefix), Buffer.from(payload)]);
     const checksum = newHash(msg);
-    if (!checksum.subarray(0, 4).equals(data.subarray(64))) return undefined;
+    if (!checksum.subarray(0, 4).equals(Buffer.from(data.subarray(data.length - 4)))) return undefined;
     return Buffer.from(payload);
   } catch {
     return undefined;
