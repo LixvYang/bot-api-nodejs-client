@@ -1,3 +1,4 @@
+import BigNumber from 'bignumber.js';
 import type { InvoiceEntry, MixinInvoice } from '../types';
 import Encoder from './encoder';
 import { getMixAddressBuffer, getMixAddressStringFromBuffer, parseMixAddress } from './address';
@@ -105,11 +106,12 @@ export const getInvoiceBuffer = (invoice: MixinInvoice) => {
   invoice.entries.forEach(entry => {
     enc.writeUUID(entry.trace_id);
     enc.writeUUID(entry.asset_id);
-    if (entry.amount.length > 128) {
-      throw new Error(`invalid amount of entry: ${entry.amount}`);
+    const amount = BigNumber(entry.amount).toFixed(8, BigNumber.ROUND_FLOOR);
+    if (amount.length > 128) {
+      throw new Error(`invalid amount of entry: ${amount}`);
     }
-    enc.write(Buffer.from([entry.amount.length]));
-    enc.write(Buffer.from(entry.amount));
+    enc.write(Buffer.from([amount.length]));
+    enc.write(Buffer.from(amount));
     if (entry.extra.length > ExtraSizeStorageCapacity) {
       throw new Error(`invalid extra of entry: ${entry.extra}`);
     }
