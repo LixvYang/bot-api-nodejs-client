@@ -52,7 +52,7 @@
   ],
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
-    "@size-limit/esbuild": "11.1.5",
+    "@size-limit/esbuild": "^11.2.0",
     "@size-limit/esbuild-why": "11.1.5",
     "@size-limit/preset-small-lib": "^11.1.5",
     "@types/eslint": "^8.4.2",
@@ -90,7 +90,7 @@
     "@noble/ciphers": "^1.0.0",
     "@noble/curves": "^1.2.0",
     "@noble/hashes": "^1.5.0",
-    "axios": "1.7.7",
+    "axios": "1.8.2",
     "axios-retry": "3.4.0",
     "bignumber.js": "^9.1.2",
     "bs58": "^5.0.0",
