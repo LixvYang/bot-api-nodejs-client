@@ -3,6 +3,7 @@ export * from './amount';
 export * from './auth';
 export * from './base64';
 export * from './client';
+export * from './computer';
 export * from './decoder';
 export * from './ed25519';
 export * from './encoder';
