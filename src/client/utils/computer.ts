@@ -6,6 +6,7 @@ export const MAX_BASE64_SIZE = 1644;
 
 export const OperationTypeAddUser = 1;
 export const OperationTypeSystemCall = 2;
+export const OperationTypeUserDeposit = 3;
 
 export const userIdToBytes = (uid: string) => {
   const x = BigNumber(uid);
