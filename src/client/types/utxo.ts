@@ -18,6 +18,12 @@ export interface UtxoOutput {
   spent_at: string;
 }
 
+export interface KernelDeposit {
+	chain: string;
+	deposit_hash: string;
+	deposit_index: number;
+}
+
 export interface SafeUtxoOutput extends UtxoOutput {
   asset_id: string;
   kernel_asset_id: string;
@@ -28,6 +34,10 @@ export interface SafeUtxoOutput extends UtxoOutput {
   senders_hash: string;
   senders_threshold: number;
   sequence: number;
+
+  inscription_hash?: string;
+  deposit?: KernelDeposit;
+  request_id?: string;
 }
 
 export interface OutputsRequest {

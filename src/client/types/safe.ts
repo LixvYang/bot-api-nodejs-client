@@ -23,6 +23,7 @@ export interface SafeAsset {
   confirmations: number;
   kernel_asset_id: string;
   price_updated_at: string;
+  collection_hash?: string;
 }
 
 export interface SafeDepositEntriesRequest {
