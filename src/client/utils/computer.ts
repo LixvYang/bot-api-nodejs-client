@@ -2,7 +2,7 @@ import { parse } from 'uuid';
 import BigNumber from 'bignumber.js';
 import { base64RawURLEncode } from './base64';
 
-export const MAX_BASE64_SIZE = 1644;
+export const MAX_SOLANA_TX_SIZE = 1232;
 
 export const OperationTypeAddUser = 1;
 export const OperationTypeSystemCall = 2;
@@ -23,7 +23,7 @@ export const userIdToBytes = (uid: string) => {
 };
 
 // bytes of Solana transaction: Buffer.from(tx.serialize())
-export const checkSystemCallSize = (txBuf: Buffer) => txBuf.toString('base64').length < MAX_BASE64_SIZE;
+export const checkSystemCallSize = (txBuf: Buffer) => txBuf.byteLength <= MAX_SOLANA_TX_SIZE;
 
 export const buildSystemCallExtra = (uid: string, cid: string, skipPostProcess: boolean, fid?: string) => {
   const flag = skipPostProcess ? 1 : 0;
