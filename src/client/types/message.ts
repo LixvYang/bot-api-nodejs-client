@@ -102,14 +102,14 @@ export interface AppCardMessageRequest {
   description: string;
   action: string;
   cover_url?: string;
-  actions?: AppButtonView[]
+  actions?: AppButtonView[];
   shareable?: boolean;
 }
 
 export interface AppButtonView {
-	label: string;
-	action: string;
-	color: string;
+  label: string;
+  action: string;
+  color: string;
 }
 
 export interface FileMessageRequest {
