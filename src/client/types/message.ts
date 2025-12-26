@@ -107,9 +107,9 @@ export interface AppCardMessageRequest {
 }
 
 export interface AppButtonView {
-	Label: string;
-	Action: string;
-	Color: string;
+	label: string;
+	action: string;
+	color: string;
 }
 
 export interface FileMessageRequest {
